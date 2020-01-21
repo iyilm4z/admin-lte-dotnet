@@ -3,15 +3,15 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminLte.Core.Layout.Footer
+namespace AdminLte.Core.Layout.Content
 {
-    [HtmlTargetElement("lte-footer-right")]
-    public class FooterRightTagHelper : LteTagHelperBase
+    [HtmlTargetElement("lte-content-body")]
+    public class ContentBodyTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var footerContext = (FooterTagHelperContext)context.Items[typeof(FooterTagHelperContext)];
-            footerContext.RightHtmlContent = await BuildHtmlContentAsync(output);
+        {       
+            var contentContext = (ContentTagHelperContext)context.Items[typeof(ContentTagHelperContext)];
+            contentContext.BodyHtmlContent = await BuildHtmlContentAsync(output);
 
             output.SuppressOutput();
         }
@@ -20,7 +20,7 @@ namespace AdminLte.Core.Layout.Footer
         {
             var sb = new StringBuilder();
 
-            sb.Append(@"<div class=""float-right d-none d-sm-block"">");
+            sb.Append(@"<div class=""content"">");
             sb.Append((await output.GetChildContentAsync()).GetContent());
             sb.Append("</div>");
 

@@ -8,9 +8,9 @@ namespace AdminLte.Core.Layout.Footer
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var childContent = await output.GetChildContentAsync();
-            var modalContext = (FooterTagHelperContext)context.Items[typeof(FooterTagHelperContext)];
-            modalContext.LeftHtmlContent = childContent;
+            var footerContext = (FooterTagHelperContext)context.Items[typeof(FooterTagHelperContext)];
+            footerContext.LeftHtmlContent = await output.GetChildContentAsync();
+            
             output.SuppressOutput();
         }
     }

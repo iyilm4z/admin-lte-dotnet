@@ -4,13 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AdminLte.Mvc</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="~/lib/admin-lte/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/icheck-bootstrap/icheck-bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <lte-wrapper>
         <lte-content>
-            @RenderBody()
+            <lte-content-header fluid="false" breadcrumb="true">
+                <h4>Blank Page</h4>
+            </lte-content-header>
+            <lte-content-body>
+                @RenderBody()
+            </lte-content-body>
         </lte-content>
 
         <lte-footer>
@@ -24,9 +31,13 @@
 
     </lte-wrapper>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
+    <script src="~/lib/admin-lte/dist/js/adminlte.min.js"></script>
+    
     @RenderSection("Scripts", required: false)
 </body>
 </html>

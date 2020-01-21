@@ -31,9 +31,7 @@ namespace AdminLte.Core.Layout.Footer
 
             if (footerContext.RightHtmlContent != null)
             {
-                sb.Append(@"<div class=""float-right d-none d-sm-block"">");
                 sb.Append(ConvertToHtmlString(footerContext.RightHtmlContent));
-                sb.Append("</div>");
             }
 
             if (footerContext.LeftHtmlContent != null)
