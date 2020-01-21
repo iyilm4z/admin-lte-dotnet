@@ -5,16 +5,21 @@ using System.Threading.Tasks;
 
 namespace AdminLte.Core.Layout.Content
 {
-    [HtmlTargetElement("lte-content-header")]
+    [HtmlTargetElement("lte-content-header", ParentTag = "lte-content")]
+    [OutputElementHint("section")]
     public class ContentHeaderTagHelper : LteTagHelperBase
     {
-        [HtmlAttributeName("title")]
+        private const string TitleAttributeName = "title";
+        private const string IsFluidAttributeName = "fluid";
+        private const string EnableBreadcrumbAttributeName = "breadcrumb";
+
+        [HtmlAttributeName(TitleAttributeName)]
         public string Title { get; set; }
 
-        [HtmlAttributeName("fluid")]
+        [HtmlAttributeName(IsFluidAttributeName)]
         public bool IsFluid { get; set; }
 
-        [HtmlAttributeName("breadcrumb")]
+        [HtmlAttributeName(EnableBreadcrumbAttributeName)]
         public bool EnableBreadcrumb { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -43,7 +48,7 @@ namespace AdminLte.Core.Layout.Content
         private async Task AppendContainer(StringBuilder sb, TagHelperOutput output)
         {
             sb.Append(@"<div class=""row mb-2"">");
-            
+
             if (string.IsNullOrEmpty(Title) && !EnableBreadcrumb)
             {
                 sb.Append(@"<div class=""col-sm-12"">");
@@ -58,14 +63,14 @@ namespace AdminLte.Core.Layout.Content
 
                 AppendBreadcrumb(sb);
             }
-            
+
             sb.Append("</div>");
         }
 
         private async Task AppendTitleAsync(StringBuilder sb, TagHelperOutput output)
         {
             sb.AppendFormat(@"<div class=""{0}"">", EnableBreadcrumb ? "col-sm-6" : "col-sm-12");
-            
+
             if (!string.IsNullOrEmpty(Title))
             {
                 sb.AppendFormat("<h1>{0}</h1>", Title);
@@ -74,7 +79,7 @@ namespace AdminLte.Core.Layout.Content
             {
                 sb.Append((await output.GetChildContentAsync()).GetContent());
             }
-            
+
             sb.Append("</div>");
         }
 

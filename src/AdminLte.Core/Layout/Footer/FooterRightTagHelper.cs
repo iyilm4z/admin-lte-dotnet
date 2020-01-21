@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace AdminLte.Core.Layout.Footer
 {
-    [HtmlTargetElement("lte-footer-right")]
+    [HtmlTargetElement("lte-footer-right", ParentTag = "lte-footer")]
+    [OutputElementHint("div")]
     public class FooterRightTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

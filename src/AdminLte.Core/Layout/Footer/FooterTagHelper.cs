@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 
 namespace AdminLte.Core.Layout.Footer
 {
-    [HtmlTargetElement("lte-footer")]
+    [HtmlTargetElement("lte-footer", ParentTag = "lte-wrapper")]
+    [OutputElementHint("footer")]
     public class FooterTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

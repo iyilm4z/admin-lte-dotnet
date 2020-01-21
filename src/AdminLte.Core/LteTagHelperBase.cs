@@ -7,6 +7,8 @@ namespace AdminLte.Core
 {
     public abstract class LteTagHelperBase : TagHelper
     {
+        protected const string  AttributePrefix = "lte-";
+
         public static string ConvertToHtmlString(IHtmlContent htmlContent)
         {
             if (htmlContent == null)

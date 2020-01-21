@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 
 namespace AdminLte.Core.Layout.Content
 {
-    [HtmlTargetElement("lte-content")]
+    [HtmlTargetElement("lte-content", ParentTag = "lte-wrapper")]
+    [OutputElementHint("div")]
     public class ContentTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

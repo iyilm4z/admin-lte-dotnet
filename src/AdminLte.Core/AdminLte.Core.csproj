@@ -9,9 +9,5 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Layout\Navbar\" />
-  </ItemGroup>
-
 
 </Project>
