@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AdminLte.Core.Layout
+namespace AdminLte.Layout
 {
     [HtmlTargetElement("lte-wrapper")]
     public class WrapperTagHelper : LteTagHelperBase
@@ -21,14 +21,12 @@ namespace AdminLte.Core.Layout
             output.TagName = "div";
 
             var classes = "wrapper";
-
             foreach (var wrapperClass in _lteLayoutOptions.WrapperClasses.Distinct())
             {
                 classes += $" {wrapperClass}";
             }
 
             output.Attributes.Add("class", classes);
-
             output.Content.SetHtmlContent(childContent);
         }
     }

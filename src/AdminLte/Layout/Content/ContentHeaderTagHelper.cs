@@ -1,52 +1,38 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminLte.Core.Layout.Content
+namespace AdminLte.Layout.Content
 {
     [HtmlTargetElement("lte-content-header", ParentTag = "lte-content")]
-    [OutputElementHint("section")]
     public class ContentHeaderTagHelper : LteTagHelperBase
     {
-        private const string TitleAttributeName = "title";
         private const string IsFluidAttributeName = "fluid";
+        private const string TitleAttributeName = "title";
         private const string EnableBreadcrumbAttributeName = "breadcrumb";
+
+        [HtmlAttributeName(IsFluidAttributeName)]
+        public bool IsFluid { get; set; } = true;
 
         [HtmlAttributeName(TitleAttributeName)]
         public string Title { get; set; }
-
-        [HtmlAttributeName(IsFluidAttributeName)]
-        public bool IsFluid { get; set; }
 
         [HtmlAttributeName(EnableBreadcrumbAttributeName)]
         public bool EnableBreadcrumb { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var contentContext = (ContentTagHelperContext)context.Items[typeof(ContentTagHelperContext)];
-            contentContext.HeaderHtmlContent = await BuildHtmlContentAsync(output);
-
-            output.SuppressOutput();
+            output.TagName = "section";
+            output.Attributes.Add("class", "content-header");
+            output.PreContent.SetHtmlContent(string.Format(@"<div class=""{0}"">", IsFluid ? "container-fluid" : "container"));
+            output.Content.SetHtmlContent(await BuildHtmlContentAsync(output));
+            output.PostContent.SetHtmlContent("</div>");
         }
 
-        private async Task<HtmlString> BuildHtmlContentAsync(TagHelperOutput output)
+        private async Task<string> BuildHtmlContentAsync(TagHelperOutput output)
         {
             var sb = new StringBuilder();
 
-            sb.Append(@"<section class=""content-header"">");
-            sb.AppendFormat(@"<div class=""{0}"">", IsFluid ? "container-fluid" : "container");
-
-            await AppendContainer(sb, output);
-
-            sb.Append("</div>");
-            sb.Append("</section>");
-
-            return new HtmlString(sb.ToString());
-        }
-
-        private async Task AppendContainer(StringBuilder sb, TagHelperOutput output)
-        {
             sb.Append(@"<div class=""row mb-2"">");
 
             if (string.IsNullOrEmpty(Title) && !EnableBreadcrumb)
@@ -65,6 +51,8 @@ namespace AdminLte.Core.Layout.Content
             }
 
             sb.Append("</div>");
+
+            return sb.ToString();
         }
 
         private async Task AppendTitleAsync(StringBuilder sb, TagHelperOutput output)

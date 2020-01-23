@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AdminLte.Core.Extensions
+namespace AdminLte.Extensions
 {
     public static class ServiceCollectionExtensions
     {

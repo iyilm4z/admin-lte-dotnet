@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdminLte.Core\AdminLte.Core.csproj" />
+    <ProjectReference Include="..\AdminLte\AdminLte.csproj" />
   </ItemGroup>
-
-
 
 </Project>

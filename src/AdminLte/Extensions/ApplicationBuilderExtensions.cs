@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace AdminLte.Core.Extensions
+namespace AdminLte.Extensions
 {
     public static class ApplicationBuilderExtensions
     {

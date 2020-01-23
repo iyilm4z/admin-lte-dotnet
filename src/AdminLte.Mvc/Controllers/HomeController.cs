@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AdminLte.Core;
 
 namespace AdminLte.Mvc.Controllers
 {

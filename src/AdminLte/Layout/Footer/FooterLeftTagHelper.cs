@@ -1,17 +1,15 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace AdminLte.Core.Layout.Footer
+namespace AdminLte.Layout.Footer
 {
     [HtmlTargetElement("lte-footer-left", ParentTag = "lte-footer")]
     public class FooterLeftTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var footerContext = (FooterTagHelperContext)context.Items[typeof(FooterTagHelperContext)];
-            footerContext.LeftHtmlContent = await output.GetChildContentAsync();
-
-            output.SuppressOutput();
+            output.TagName = "";
+            output.Content.SetHtmlContent((await output.GetChildContentAsync()).GetContent());
         }
     }
 }

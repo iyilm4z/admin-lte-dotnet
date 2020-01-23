@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdminLte.Core
+namespace AdminLte
 {
     public class LteLayoutOptions
     {

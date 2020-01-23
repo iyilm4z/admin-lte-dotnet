@@ -9,13 +9,32 @@
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
     <link href="~/lib/icheck-bootstrap/icheck-bootstrap.css" rel="stylesheet" />
 </head>
-<body>
+<body class="hold-transition sidebar-mini">
+
     <lte-wrapper>
+        <lte-navbar>
+            <lte-navbar-left-links>
+                <li>
+                    <span class="text-black-50"> TODO</span>
+                </li>
+            </lte-navbar-left-links>
+            <lte-navbar-right-links>
+                <li>
+                    <span class="text-black-50"> TODO</span>
+                </li>
+            </lte-navbar-right-links>
+        </lte-navbar>
+
+        <lte-main-sidebar>
+            <span class="text-white-50"> TODO</span>
+        </lte-main-sidebar>
+
         <lte-content>
-            <lte-content-header fluid="false" breadcrumb="true">
+            <lte-content-header breadcrumb="true">
                 <h4>Blank Page</h4>
             </lte-content-header>
             <lte-content-body>
+                @await Html.PartialAsync("_Custom")
                 @RenderBody()
             </lte-content-body>
         </lte-content>
@@ -29,6 +48,9 @@
             </lte-footer-right>
         </lte-footer>
 
+        <lte-control-sidebar>
+            <span class="text-white-50"> TODO</span>
+        </lte-control-sidebar>
     </lte-wrapper>
 
     <script src="~/lib/jquery/jquery.min.js"></script>
