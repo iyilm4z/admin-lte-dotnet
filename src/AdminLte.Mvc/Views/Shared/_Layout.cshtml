@@ -1,65 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AdminLte.Mvc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link href="~/lib/admin-lte/dist/css/adminlte.min.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="~/lib/icheck-bootstrap/icheck-bootstrap.css" rel="stylesheet" />
+    <title>AdminLTE 3 | @ViewData["Title"]</title>
+
+    <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png" />
+
+    @await Html.PartialAsync("_Layout.Styles.cshtml")
+    @RenderSection("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">
-
-    <lte-wrapper>
-        <lte-navbar>
-            <lte-navbar-left-links>
-                <li>
-                    <span class="text-black-50"> TODO</span>
-                </li>
-            </lte-navbar-left-links>
-            <lte-navbar-right-links>
-                <li>
-                    <span class="text-black-50"> TODO</span>
-                </li>
-            </lte-navbar-right-links>
-        </lte-navbar>
-
-        <lte-main-sidebar>
-            <span class="text-white-50"> TODO</span>
-        </lte-main-sidebar>
-
-        <lte-content>
-            <lte-content-header breadcrumb="true">
-                <h4>Blank Page</h4>
-            </lte-content-header>
-            <lte-content-body>
-                @await Html.PartialAsync("_Custom")
-                @RenderBody()
-            </lte-content-body>
-        </lte-content>
-
-        <lte-footer>
-            <lte-footer-left>
-                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-            </lte-footer-left>
-            <lte-footer-right>
-                <b>Version</b> 3.0.2
-            </lte-footer-right>
-        </lte-footer>
-
-        <lte-control-sidebar>
-            <span class="text-white-50"> TODO</span>
-        </lte-control-sidebar>
-    </lte-wrapper>
-
-    <script src="~/lib/jquery/jquery.min.js"></script>
-    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/lib/font-awesome/js/all.min.js"></script>
-    <script src="~/lib/admin-lte/dist/js/adminlte.min.js"></script>
-
+    <div class="wrapper">
+        @await Html.PartialAsync("_Header.cshtml")
+        @await Html.PartialAsync("_Sidebar.cshtml")
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+        @await Html.PartialAsync("_ControlSidebar.cshtml")
+        @await Html.PartialAsync("_Footer.cshtml")
+    </div>
+    @await Html.PartialAsync("_Layout.Scripts.cshtml")
     @RenderSection("Scripts", required: false)
 </body>
 </html>
