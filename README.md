@@ -1,1 +1,1 @@
-# admin-lte-dotnet
+[AdminLTE](https://github.com/ColorlibHQ/AdminLTE) for [MVC Core](https://docs.microsoft.com/tr-tr/aspnet/core/mvc), [Razor Pages](https://docs.microsoft.com/tr-tr/aspnet/core/razor-pages) and [Tag Helpers](https://docs.microsoft.com/tr-tr/aspnet/core/mvc/views/tag-helpers)  
