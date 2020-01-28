@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace AdminLte.TagHelpers.Layout.ControlSidebar
 {
-    [HtmlTargetElement("lte-control-sidebar", ParentTag = "lte-wrapper")]
+    [HtmlTargetElement("lte-control-sidebar")]
     public class ControlSidebarTagHelper : LteTagHelperBase
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

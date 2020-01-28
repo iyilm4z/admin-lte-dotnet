@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>AdminLTE 3 | @ViewData["Title"]</title>
+
+    <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png" />
+
+    @await Html.PartialAsync("_Styles.cshtml")
+    @RenderSection("Styles", required: false)
+</head>
+<body class="hold-transition sidebar-mini">
+    <lte-wrapper>
+        @await Html.PartialAsync("_Header.cshtml")
+        @await Html.PartialAsync("_Sidebar.cshtml")
+        <lte-content>
+            @RenderBody()
+        </lte-content>
+        @await Html.PartialAsync("_ControlSidebar.cshtml")
+        @await Html.PartialAsync("_Footer.cshtml")
+    </lte-wrapper>
+
+    @await Html.PartialAsync("_Scripts.cshtml")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
