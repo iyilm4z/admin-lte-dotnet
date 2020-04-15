@@ -11,7 +11,7 @@
       ]
     },
     {
-      "library": "bootstrap@4.3.1",
+      "library": "bootstrap@4.4.1",
       "provider": "jsdelivr",
       "destination": "wwwroot/lib/bootstrap",
       "files": [
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "library": "@fortawesome/fontawesome-free@5.11.2",
+      "library": "@fortawesome/fontawesome-free@5.13.0",
       "provider": "jsdelivr",
       "destination": "wwwroot/lib/font-awesome",
       "files": [
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "library": "admin-lte@3.0.2",
+      "library": "admin-lte@3.0.4",
       "provider": "jsdelivr",
       "destination": "wwwroot/lib/admin-lte",
       "files": [
