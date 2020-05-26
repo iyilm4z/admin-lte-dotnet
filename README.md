@@ -5,5 +5,8 @@ This repo shows how to implement layout and starter page of [AdminLTE v3](https:
 #### Layout
 ![](screenshots/Layout.jpg)
 
+#### Layout Structure
+![](screenshots/LayoutStructure.jpg)
+
 #### Starter Page
 ![](screenshots/StarterPage.jpg)
