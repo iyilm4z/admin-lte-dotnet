@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png" />
 
     @await Html.PartialAsync("_Styles.cshtml")
-    @RenderSection("Styles", required: false)
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -23,6 +23,6 @@
         @await Html.PartialAsync("_Footer.cshtml")
     </div>
     @await Html.PartialAsync("_Scripts.cshtml")
-    @RenderSection("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

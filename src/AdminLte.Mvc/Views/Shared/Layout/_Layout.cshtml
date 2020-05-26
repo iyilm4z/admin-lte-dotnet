@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using AdminLte.Mvc.Views.Shared.Components.Header
+@using AdminLte.Mvc.Views.Shared.Components.Sidebar
+@using AdminLte.Mvc.Views.Shared.Components.ControlSidebar
+@using AdminLte.Mvc.Views.Shared.Components.Footer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,19 +15,19 @@
     <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png" />
 
     @await Html.PartialAsync("_Styles.cshtml")
-    @RenderSection("Styles", required: false)
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @await Html.PartialAsync("_Header.cshtml")
-        @await Html.PartialAsync("_Sidebar.cshtml")
+        @(await Component.InvokeAsync<HeaderViewComponent>())
+        @(await Component.InvokeAsync<SidebarViewComponent>())
         <div class="content-wrapper">
             @RenderBody()
         </div>
-        @await Html.PartialAsync("_ControlSidebar.cshtml")
-        @await Html.PartialAsync("_Footer.cshtml")
+        @(await Component.InvokeAsync<ControlSidebarViewComponent>())
+        @(await Component.InvokeAsync<FooterViewComponent>())
     </div>
     @await Html.PartialAsync("_Scripts.cshtml")
-    @RenderSection("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

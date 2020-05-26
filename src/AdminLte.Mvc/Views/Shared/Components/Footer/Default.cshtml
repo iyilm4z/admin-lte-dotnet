@@ -1,0 +1,9 @@
+﻿@using AdminLte.Mvc.Views.Shared.Components.FooterLeft
+@using AdminLte.Mvc.Views.Shared.Components.FooterRight
+
+<footer class="main-footer">
+    @(await Component.InvokeAsync<FooterLeftViewComponent>())
+    <div class="float-right d-none d-sm-inline">
+        @(await Component.InvokeAsync<FooterRightViewComponent>())
+    </div>
+</footer>
