@@ -6,8 +6,7 @@
       "library": "jquery@3.4.1",
       "destination": "wwwroot/lib/jquery",
       "files": [
-        "jquery.min.js",
-        "jquery.min.map"
+        "jquery.min.js"
       ]
     },
     {
@@ -15,8 +14,7 @@
       "provider": "jsdelivr",
       "destination": "wwwroot/lib/bootstrap",
       "files": [
-        "dist/js/bootstrap.bundle.min.js",
-        "dist/js/bootstrap.bundle.min.js.map"
+        "dist/js/bootstrap.bundle.min.js"
       ]
     },
     {
@@ -48,9 +46,7 @@
       "destination": "wwwroot/lib/admin-lte",
       "files": [
         "dist/js/adminlte.min.js",
-        "dist/js/adminlte.min.js.map",
         "dist/css/adminlte.min.css",
-        "dist/css/adminlte.min.css.map",
         "dist/img/AdminLTELogo.png",
         "dist/img/user2-160x160.jpg",
         "dist/img/user1-128x128.jpg",

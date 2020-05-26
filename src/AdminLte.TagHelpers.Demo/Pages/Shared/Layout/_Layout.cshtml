@@ -1,0 +1,33 @@
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.Header
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.Sidebar
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.ControlSidebar
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.Footer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>AdminLTE 3 | @ViewData["Title"]</title>
+
+    <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png" />
+
+    @await Html.PartialAsync("_Styles.cshtml")
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="hold-transition sidebar-mini">
+    <lte-wrapper>
+        @(await Component.InvokeAsync<HeaderViewComponent>())
+        @(await Component.InvokeAsync<SidebarViewComponent>())
+        <lte-content>
+            @RenderBody()
+        </lte-content>
+        @(await Component.InvokeAsync<ControlSidebarViewComponent>())
+        @(await Component.InvokeAsync<FooterViewComponent>())
+    </lte-wrapper>
+    @await Html.PartialAsync("_Scripts.cshtml")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

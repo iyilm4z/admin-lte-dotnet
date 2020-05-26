@@ -1,0 +1,11 @@
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.SidebarBrand
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.SidebarUserPanel
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.SidebarMenu
+
+<lte-main-sidebar>
+    @(await Component.InvokeAsync<SidebarBrandViewComponent>())
+    <div class="sidebar">
+        @(await Component.InvokeAsync<SidebarUserPanelViewComponent>())
+        @(await Component.InvokeAsync<SidebarMenuViewComponent>())
+    </div>
+</lte-main-sidebar>

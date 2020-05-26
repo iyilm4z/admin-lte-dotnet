@@ -1,4 +1,6 @@
-﻿<ul class="navbar-nav">
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.HeaderSearchForm
+
+<ul class="navbar-nav">
     <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Home</a>
     </li>
@@ -6,3 +8,5 @@
         <a href="#" class="nav-link">Contact</a>
     </li>
 </ul>
+
+@(await Component.InvokeAsync<HeaderSearchFormViewComponent>())

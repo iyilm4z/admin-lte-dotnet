@@ -9,7 +9,12 @@ namespace AdminLte.TagHelpers.Demo
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AddPageRoute("/Home/Index", "");
+                });
 
             services.AddAdminLte();
         }
@@ -24,9 +29,7 @@ namespace AdminLte.TagHelpers.Demo
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
 
             app.UseStaticFiles();

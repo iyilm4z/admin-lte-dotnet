@@ -1,0 +1,11 @@
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.FooterLeft
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.FooterRight
+
+<lte-footer>
+    <lte-footer-left>
+        @(await Component.InvokeAsync<FooterLeftViewComponent>())
+    </lte-footer-left>
+    <lte-footer-right>
+        @(await Component.InvokeAsync<FooterRightViewComponent>())
+    </lte-footer-right>
+</lte-footer>

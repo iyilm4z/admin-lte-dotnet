@@ -1,0 +1,11 @@
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.HeaderLeft
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.HeaderRight
+
+<lte-navbar>
+    <lte-navbar-left>
+        @(await Component.InvokeAsync<HeaderLeftViewComponent>())
+    </lte-navbar-left>
+    <lte-navbar-right>
+        @(await Component.InvokeAsync<HeaderRightViewComponent>())
+    </lte-navbar-right>
+</lte-navbar>

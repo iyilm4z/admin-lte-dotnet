@@ -1,0 +1,7 @@
+﻿@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.HeaderMessagesMenu
+@using AdminLte.TagHelpers.Demo.Pages.Shared.Components.HeaderNotificationsMenu
+
+<ul class="navbar-nav ml-auto">
+    @(await Component.InvokeAsync<HeaderMessagesMenuViewComponent>())
+    @(await Component.InvokeAsync<HeaderNotificationsMenuViewComponent>())
+</ul>
