@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using AdminLte.RazorPages.Pages.Shared.Components.Header
+@using AdminLte.RazorPages.Pages.Shared.Components.Sidebar
+@using AdminLte.RazorPages.Pages.Shared.Components.ControlSidebar
+@using AdminLte.RazorPages.Pages.Shared.Components.Footer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -14,13 +19,13 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @await Html.PartialAsync("_Header.cshtml")
-        @await Html.PartialAsync("_Sidebar.cshtml")
+        @(await Component.InvokeAsync<HeaderViewComponent>())
+        @(await Component.InvokeAsync<SidebarViewComponent>())
         <div class="content-wrapper">
             @RenderBody()
         </div>
-        @await Html.PartialAsync("_ControlSidebar.cshtml")
-        @await Html.PartialAsync("_Footer.cshtml")
+        @(await Component.InvokeAsync<ControlSidebarViewComponent>())
+        @(await Component.InvokeAsync<FooterViewComponent>())
     </div>
     @await Html.PartialAsync("_Scripts.cshtml")
     @await RenderSectionAsync("Scripts", required: false)

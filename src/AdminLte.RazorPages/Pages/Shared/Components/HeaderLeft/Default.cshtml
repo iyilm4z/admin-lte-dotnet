@@ -1,4 +1,6 @@
-﻿<ul class="navbar-nav">
+﻿@using AdminLte.RazorPages.Pages.Shared.Components.HeaderSearchForm
+
+<ul class="navbar-nav">
     <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
     </li>
@@ -9,3 +11,5 @@
         <a href="#" class="nav-link">Contact</a>
     </li>
 </ul>
+
+@(await Component.InvokeAsync<HeaderSearchFormViewComponent>())

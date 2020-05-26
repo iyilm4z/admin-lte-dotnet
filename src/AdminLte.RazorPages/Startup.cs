@@ -10,6 +10,7 @@ namespace AdminLte.RazorPages
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages()
+                .AddRazorRuntimeCompilation()
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AddPageRoute("/Home/Index", "");
