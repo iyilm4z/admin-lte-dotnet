@@ -43,7 +43,7 @@
       ]
     },
     {
-      "library": "admin-lte@3.0.4",
+      "library": "admin-lte@3.0.5",
       "provider": "jsdelivr",
       "destination": "wwwroot/lib/admin-lte",
       "files": [

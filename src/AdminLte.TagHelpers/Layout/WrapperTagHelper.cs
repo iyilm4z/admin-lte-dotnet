@@ -20,11 +20,8 @@ namespace AdminLte.TagHelpers.Layout
 
             output.TagName = "div";
 
-            var classes = "wrapper";
-            foreach (var wrapperClass in _lteLayoutOptions.WrapperClasses.Distinct())
-            {
-                classes += $" {wrapperClass}";
-            }
+            var classes = _lteLayoutOptions.WrapperClasses.Distinct()
+                .Aggregate("wrapper", (current, wrapperClass) => current + $" {wrapperClass}");
 
             output.Attributes.Add("class", classes);
             output.Content.SetHtmlContent(childContent);

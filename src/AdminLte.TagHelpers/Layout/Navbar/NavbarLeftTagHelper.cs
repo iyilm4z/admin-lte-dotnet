@@ -1,8 +1,7 @@
-﻿using AdminLte.TagHelpers.Layout.Navbar;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using System.Threading.Tasks;
 
-namespace AdminLte.TagHelpers.Layout.MainSidebar
+namespace AdminLte.TagHelpers.Layout.Navbar
 {
     [HtmlTargetElement("lte-navbar-left", ParentTag = "lte-navbar")]
     public class NavbarLeftTagHelper : LteTagHelperBase
