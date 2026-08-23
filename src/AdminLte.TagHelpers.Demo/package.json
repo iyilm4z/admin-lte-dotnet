@@ -1,0 +1,14 @@
+{
+  "name": "adminlte-assets",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "bootstrap": "^4.6.0",
+    "@fortawesome/fontawesome-free": "7.0.1",
+    "admin-lte": "3.2.0"
+  },
+  "scripts": {
+    "build:lib": "node build-libs.js"
+  }
+}
